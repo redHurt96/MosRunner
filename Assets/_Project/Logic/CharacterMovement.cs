@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -5,6 +6,9 @@ namespace _Project.Logic
 {
     public class CharacterMovement : MonoBehaviour
     {
+        public event Action OnMoveLeft;
+        public event Action OnMoveRight;
+        
         [SerializeField] private float _limit = 8f;
         [SerializeField] private float _range = 8.5f;
         [SerializeField] private float _duration = .5f;
@@ -26,6 +30,8 @@ namespace _Project.Logic
                 _currentTween = transform
                     .DOMoveX(destination, _duration)
                     .OnComplete(() => _currentTween = null);
+                
+                OnMoveLeft?.Invoke();
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
@@ -36,7 +42,9 @@ namespace _Project.Logic
                 
                 _currentTween = transform
                     .DOMoveX(destination, _duration)
-                    .OnComplete(() => _currentTween = null);;
+                    .OnComplete(() => _currentTween = null);
+                
+                OnMoveRight?.Invoke();
             }
         }
     }
