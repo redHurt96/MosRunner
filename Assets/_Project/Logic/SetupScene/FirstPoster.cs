@@ -1,16 +1,21 @@
 using RH_Utilities.Extensions;
-using RH_Utilities.UI;
 using UnityEngine;
 
 namespace _Project.Logic.SetupScene
 {
-    public class FirstPoster : BaseActionButton
+    public class FirstPoster : MonoBehaviour
     {
         [SerializeField] private GameObject _firstPoster;
         [SerializeField] private GameObject _secondPoster;
         [SerializeField] private GameObject[] _characterButtons;
 
-        protected override void PerformOnClick()
+        private void Update()
+        {
+            //if (Input.GetKeyDown(_key))
+                Interact();
+        }
+
+        private void Interact()
         {
             _firstPoster.SetActive(false);
             gameObject.SetActive(false);

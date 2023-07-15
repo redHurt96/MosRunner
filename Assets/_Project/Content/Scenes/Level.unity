@@ -11764,6 +11764,8 @@ MonoBehaviour:
   _limit: 8
   _range: 5
   _duration: 0.3
+  _left: 330
+  _right: 331
 --- !u!114 &365849740
 MonoBehaviour:
   m_ObjectHideFlags: 0
