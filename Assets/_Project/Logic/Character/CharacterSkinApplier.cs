@@ -10,8 +10,8 @@ namespace _Project.Logic.SetupScene
 
         private void Awake()
         {
-            _man.SetActive(IsMan);
-            _woman.SetActive(!IsMan);
+            _man.SetActive(IsMale);
+            _woman.SetActive(!IsMale);
         }
     }
 }
