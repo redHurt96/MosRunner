@@ -1,4 +1,5 @@
 using System;
+using _Project.Logic.Level;
 using UnityEngine;
 using static _Project.Logic.Common.ProjectInputService;
 using static UnityEngine.Vector3;
@@ -12,10 +13,11 @@ namespace _Project.Logic.Character
         [SerializeField] private float _force = 50f;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private CharacterGroundDetector _groundDetector;
+        [SerializeField] private LevelManager _levelManager;
 
         private void Update()
         {
-            if (!_groundDetector.IsGrounded)
+            if (!_groundDetector.IsGrounded || _levelManager.GameEnded)
                 return;
             
             if (UpButtonPressed) 

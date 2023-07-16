@@ -1,9 +1,10 @@
 using System;
+using _Project.Logic.Level;
 using DG.Tweening;
 using UnityEngine;
 using static _Project.Logic.Common.ProjectInputService;
 
-namespace _Project.Logic
+namespace _Project.Logic.Character
 {
     public class CharacterMovement : MonoBehaviour
     {
@@ -13,12 +14,13 @@ namespace _Project.Logic
         [SerializeField] private float _limit = 8f;
         [SerializeField] private float _range = 8.5f;
         [SerializeField] private float _duration = .5f;
+        [SerializeField] private LevelManager _levelManager;
 
         private Tween _currentTween;
 
         private void Update()
         {
-            if (_currentTween != null)
+            if (_currentTween != null || _levelManager.GameEnded)
                 return;
             
             if (LeftButtonPressed)

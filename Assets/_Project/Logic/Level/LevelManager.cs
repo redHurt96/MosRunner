@@ -6,6 +6,8 @@ namespace _Project.Logic.Level
 {
     public class LevelManager : MonoBehaviour
     {
+        public bool GameEnded = false;
+        
         public event Action OnEnd;
         
         private LevelData _data;
@@ -14,9 +16,9 @@ namespace _Project.Logic.Level
         {
             _data ??= FindObjectOfType<LevelData>();
             _data.TileSpeed = 0f;
-            
+
             Show("end_game");
-            
+            GameEnded = true;
             OnEnd?.Invoke();
         }
     }
