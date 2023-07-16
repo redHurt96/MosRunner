@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using static _Project.Logic.Common.ProjectInputService;
 
 namespace _Project.Logic
 {
@@ -13,9 +14,6 @@ namespace _Project.Logic
         [SerializeField] private float _range = 8.5f;
         [SerializeField] private float _duration = .5f;
 
-        [SerializeField] private KeyCode _left;
-        [SerializeField] private KeyCode _right; 
-        
         private Tween _currentTween;
 
         private void Update()
@@ -23,9 +21,7 @@ namespace _Project.Logic
             if (_currentTween != null)
                 return;
             
-            Debug.Log(Input.inputString);
-            
-            if (Input.GetKeyDown(_left))
+            if (LeftButtonPressed)
             {
                 float destination = transform.position.x + _range;
                 
@@ -38,7 +34,7 @@ namespace _Project.Logic
                 
                 OnMoveLeft?.Invoke();
             }
-            else if (Input.GetKeyDown(_right))
+            else if (RightButtonPressed)
             {
                 float destination = transform.position.x - _range;
                 

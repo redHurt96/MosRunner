@@ -1,3 +1,4 @@
+using _Project.Logic.Character;
 using _Project.Logic.Level;
 using DG.Tweening;
 using UnityEngine;

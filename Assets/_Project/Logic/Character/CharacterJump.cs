@@ -1,8 +1,9 @@
 using System;
-using DG.Tweening;
 using UnityEngine;
+using static _Project.Logic.Common.ProjectInputService;
+using static UnityEngine.Vector3;
 
-namespace _Project.Logic
+namespace _Project.Logic.Character
 {
     public class CharacterJump : MonoBehaviour
     {
@@ -10,18 +11,20 @@ namespace _Project.Logic
 
         [SerializeField] private float _force = 50f;
         [SerializeField] private Rigidbody _rigidbody;
-        
-        private Tween _currentTween;
+        [SerializeField] private CharacterGroundDetector _groundDetector;
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) 
+            if (!_groundDetector.IsGrounded)
+                return;
+            
+            if (UpButtonPressed) 
                 Jump();
         }
 
         private void Jump()
         {
-            _rigidbody.AddForce(Vector3.up * _force);
+            _rigidbody.AddForce(up * _force);
             OnBegin?.Invoke();
         }
     }
