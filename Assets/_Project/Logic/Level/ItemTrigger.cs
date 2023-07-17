@@ -1,4 +1,3 @@
-using System;
 using _Project.Logic.Character;
 using RH_Utilities.Level;
 using UnityEngine;
@@ -7,13 +6,14 @@ namespace _Project.Logic.Level
 {
     public class ItemTrigger : ComponentTrigger<CharacterMovement>
     {
-        public ItemType Type
-        {
-            set => _type = value;
-        }
-        
         [SerializeField] private ItemType _type;
-        
+
+        public void Install(ItemConfig config)
+        {
+            _type = config.Type;
+            Instantiate(config.View, transform);
+        }
+
         protected override void ExecuteOnEnter(CharacterMovement component)
         {
             FindObjectOfType<LevelData>()
