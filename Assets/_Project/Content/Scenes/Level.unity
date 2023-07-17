@@ -54713,6 +54713,16 @@ MonoBehaviour:
   - {fileID: 1588338651374898, guid: 173aca1d877251c4390a2c279f6335ef, type: 3}
   - {fileID: 1586926603202286, guid: ba9e716894432d84abb1abcf8e3d2779, type: 3}
   - {fileID: 1221444043611970, guid: 0dd9d711c05f33949b639c91ebb8b169, type: 3}
+  - {fileID: 1944687980477614, guid: 5a850b7604c4c1149b54d961143573ad, type: 3}
+  - {fileID: 1331670089839836, guid: 9e1404cb0be70c64dab3e0ffbe1f0581, type: 3}
+  - {fileID: 1744851867669802, guid: b2f783f0bf9936a43ab99739f5c6aabb, type: 3}
+  - {fileID: 1070302921315964, guid: 1c6962262b4f0a149ab65c01e46bf547, type: 3}
+  - {fileID: 1760557618864418, guid: b957da1886efb7d40b44318e579c839d, type: 3}
+  - {fileID: 1741511206963526, guid: e319ed6541cb355408a0a1f8023492f0, type: 3}
+  - {fileID: 1889642332120886, guid: dd8403e9e1ca2234789f07b749c81100, type: 3}
+  - {fileID: 1760520325378430, guid: f6f784391a470874195d4fd456dfc795, type: 3}
+  - {fileID: 1442026831812038, guid: 04d9f24d35854ba4ea5de5c673d4456e, type: 3}
+  - {fileID: 1743619731902432, guid: da9f0a502fc11c54fb721aa61bcf0d8f, type: 3}
   _obstaclesCount: 8
   _obstaclesParent: {fileID: 1166361910}
 --- !u!114 &1578201893

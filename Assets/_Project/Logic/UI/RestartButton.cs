@@ -9,10 +9,12 @@ namespace _Project.Logic.UI
         private void Update()
         {
             if (ProjectInputService.UpButtonPressed)
-                LoadScene(GetActiveScene().buildIndex);
+                Restart();
         }
 
-        protected override void PerformOnClick() => 
-            LoadScene(GetActiveScene().buildIndex);
+        protected override void PerformOnClick() => Restart(); 
+
+        private void Restart() => 
+            LoadScene(0);
     }
 }

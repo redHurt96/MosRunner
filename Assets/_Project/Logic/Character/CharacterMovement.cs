@@ -23,7 +23,7 @@ namespace _Project.Logic.Character
             if (_currentTween != null || _levelManager.GameEnded)
                 return;
             
-            if (LeftButtonPressed)
+            if (LeftButtonPressed || Input.GetKeyDown(KeyCode.A))
             {
                 float destination = transform.position.x + _range;
                 
@@ -36,7 +36,7 @@ namespace _Project.Logic.Character
                 
                 OnMoveLeft?.Invoke();
             }
-            else if (RightButtonPressed)
+            else if (RightButtonPressed || Input.GetKeyDown(KeyCode.D))
             {
                 float destination = transform.position.x - _range;
                 
