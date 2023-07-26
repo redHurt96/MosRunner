@@ -44,3 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d5ce3e46ca2684da7a1ac9b9b76933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delay: 1
+  _sequence:
+  - left
+  - left
+  - right
+  - right
+  - up
+  - up
+  _currentCount: 0
+  _currentDelay: 0

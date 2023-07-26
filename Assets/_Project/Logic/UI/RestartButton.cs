@@ -1,5 +1,5 @@
-using _Project.Logic.Common;
 using UnityEngine;
+using static _Project.Logic.Common.ProjectInputService;
 using static UnityEngine.SceneManagement.SceneManager;
 
 namespace _Project.Logic.UI
@@ -8,7 +8,7 @@ namespace _Project.Logic.UI
     {
         private void Update()
         {
-            if (ProjectInputService.UpButtonPressed)
+            if (UpButtonPressed)
                 LoadScene(0);
         }
     }
