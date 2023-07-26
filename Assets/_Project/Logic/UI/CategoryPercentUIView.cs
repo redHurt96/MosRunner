@@ -8,16 +8,16 @@ namespace _Project.Logic.UI
     public class CategoryPercentUIView : MonoBehaviour
     {
         [SerializeField] private Category _category;
-        
+
         private Text _label;
 
-        private void Awake() => 
+        private void Awake() =>
             _label = GetComponent<Text>();
 
         private void OnEnable() =>
-            _label.text = FindObjectOfType<LevelData>()
-                              .GetPercent(_category)
-                              .ToString("F0")
+            _label.text = (FindObjectOfType<LevelData>()
+                              .GetPercent(_category) * 100)
+                          .ToString("F0")
                           + "%";
     }
 }

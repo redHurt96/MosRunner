@@ -25,8 +25,7 @@ namespace _Project.Logic.Level
 
         public float GetPercent(Category category) =>
             _collectedItems.Count(x => _itemsCategoryConfig.Contains(x, category)) 
-            / _itemsCategoryConfig.TasksCount(category) 
-            * 100;
+            / _itemsCategoryConfig.TasksCount(category);
 
         private bool IsItemCollected(string itemType) => 
             _collectedItems.Contains(itemType);
