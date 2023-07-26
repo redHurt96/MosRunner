@@ -4,9 +4,9 @@ using UnityEngine;
 namespace _Project.Logic.Level
 {
     [Serializable]
-    public class ItemConfig
+    public class ItemViewConfig
     {
-        public int Index;
+        public string Task;
         public Texture View;
     }
 }

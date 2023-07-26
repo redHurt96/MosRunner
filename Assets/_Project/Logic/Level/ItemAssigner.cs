@@ -1,7 +1,4 @@
-using System;
-using System.Linq;
 using UnityEngine;
-using RH_Utilities.Extensions;
 
 namespace _Project.Logic.Level
 {
@@ -11,14 +8,11 @@ namespace _Project.Logic.Level
         
         private void Awake()
         {
-            int index = UnityEngine.Random.Range(0, _textures.Length);
-
+            ItemViewConfig config = FindObjectOfType<LevelData>()
+                .GetRandomItemViewConfig();
+            
             GetComponent<ItemTrigger>()
-                .Install(new()
-                {
-                    Index = index,
-                    View = _textures[index],
-                });
+                .Install(config);
         }
     }
 }
