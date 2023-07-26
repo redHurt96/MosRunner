@@ -1,22 +1,24 @@
 using System;
 using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using RH_Utilities.Extensions;
 
 namespace _Project.Logic.Level
 {
     public class ItemAssigner : MonoBehaviour
     {
-        [SerializeField] private ItemConfig[] _config;
+        [SerializeField] private Texture[] _textures;
         
         private void Awake()
         {
-            Array values = Enum.GetValues(typeof(ItemType));
+            int index = UnityEngine.Random.Range(0, _textures.Length);
 
-            ItemType itemType = (ItemType)values.GetValue(Random.Range(0, values.Length));
-            
             GetComponent<ItemTrigger>()
-                .Install(_config.First(x => x.Type == itemType));
+                .Install(new()
+                {
+                    Index = index,
+                    View = _textures[index],
+                });
         }
     }
 }

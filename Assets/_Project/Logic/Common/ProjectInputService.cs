@@ -1,5 +1,6 @@
 using static UnityEngine.Input;
 using static UnityEngine.Time;
+using UnityEngine;
 
 namespace _Project.Logic.Common
 {
@@ -10,8 +11,8 @@ namespace _Project.Logic.Common
         private const float AXIS_THRESHOLD = .9f;
         private const float PRESS_DELAY = .3f;
 
-        public static bool LeftButtonPressed => GetAxis(HORIZONTAL_AXIS) < -AXIS_THRESHOLD;
-        public static bool RightButtonPressed => GetAxis(HORIZONTAL_AXIS) > AXIS_THRESHOLD;
+        public static bool LeftButtonPressed => GetAxis(HORIZONTAL_AXIS) < -AXIS_THRESHOLD || GetKeyDown(KeyCode.A);
+        public static bool RightButtonPressed => GetAxis(HORIZONTAL_AXIS) > AXIS_THRESHOLD || GetKeyDown(KeyCode.D);
         public static bool UpButtonPressed
         {
             get
@@ -19,7 +20,7 @@ namespace _Project.Logic.Common
                 if (time - _lastUpPressedTime < PRESS_DELAY)
                     return false;
                 
-                bool upButtonPressed = GetAxis(VERTICAL_AXIS) < -AXIS_THRESHOLD;
+                bool upButtonPressed = GetAxis(VERTICAL_AXIS) < -AXIS_THRESHOLD || GetKeyDown(KeyCode.Space);
 
                 if (upButtonPressed)
                     _lastUpPressedTime = time;

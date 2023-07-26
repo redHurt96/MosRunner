@@ -6,7 +6,7 @@ namespace _Project.Logic.Level
     [Serializable]
     public class ItemConfig
     {
-        public ItemType Type;
-        public GameObject View;
+        public int Index;
+        public Texture View;
     }
 }

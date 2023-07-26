@@ -6,12 +6,14 @@ namespace _Project.Logic.Level
 {
     public class ItemTrigger : ComponentTrigger<CharacterMovement>
     {
-        [SerializeField] private ItemType _type;
+        [SerializeField] private int _type;
 
         public void Install(ItemConfig config)
         {
-            _type = config.Type;
-            Instantiate(config.View, transform);
+            _type = config.Index;
+            GetComponentInChildren<MeshRenderer>()
+                .materials[1]
+                .mainTexture = config.View;
         }
 
         protected override void ExecuteOnEnter(CharacterMovement component)

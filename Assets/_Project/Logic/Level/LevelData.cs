@@ -11,18 +11,18 @@ namespace _Project.Logic
         
         [SerializeField] private float _tileSpeedIncreaseDelta = 2f;
 
-        [SerializeField, ReadOnly] private List<ItemType> _collectedItems = new();
+        [SerializeField, ReadOnly] private List<int> _collectedItems = new();
 
         public void IncreaseTilesSpeed() => 
             TileSpeed += _tileSpeedIncreaseDelta;
 
-        public void CollectItem(ItemType type)
+        public void CollectItem(int type)
         {
             if (!IsItemCollected(type))
                 _collectedItems.Add(type);
         }
 
-        public bool IsItemCollected(ItemType itemType) => 
+        public bool IsItemCollected(int itemType) => 
             _collectedItems.Contains(itemType);
     }
 }

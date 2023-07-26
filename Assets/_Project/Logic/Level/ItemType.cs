@@ -5,6 +5,7 @@ namespace _Project.Logic.Level
         RegistrationDocs = 0,
         PolisOMS,
         MoscowCard,
+        GetAssignIntoMosRu,
         SetupRegistrationAddress,
         AttachToHospital,
         ElectronicMedicalCard,

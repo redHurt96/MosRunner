@@ -20,7 +20,7 @@ namespace _Project.Logic.Character
             if (!_groundDetector.IsGrounded || _levelManager.GameEnded)
                 return;
             
-            if (UpButtonPressed || Input.GetKeyDown(KeyCode.Space)) 
+            if (UpButtonPressed) 
                 Jump();
         }
 
