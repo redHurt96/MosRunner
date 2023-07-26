@@ -2,12 +2,14 @@ using _Project.Logic.Character;
 using RH_Utilities.Attributes;
 using RH_Utilities.Level;
 using UnityEngine;
+using static UnityEngine.Quaternion;
 
 namespace _Project.Logic.Level
 {
     public class ItemTrigger : ComponentTrigger<CharacterMovement>
     {
         [SerializeField, ReadOnly] private string _task;
+        [SerializeField] private GameObject _destroyEffect;
 
         public void Install(ItemViewConfig viewConfig)
         {
@@ -21,7 +23,8 @@ namespace _Project.Logic.Level
         {
             FindObjectOfType<LevelData>()
                 .CollectItem(_task);
-            
+
+            Instantiate(_destroyEffect, transform.position, identity, transform.parent);
             Destroy(gameObject);
         }
     }
