@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using static _Project.Logic.Common.ProjectInputService;
 using static UnityEngine.SceneManagement.SceneManager;

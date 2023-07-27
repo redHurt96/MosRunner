@@ -8,10 +8,9 @@ namespace _Project.Logic.Level
     {
         public float TileSpeed;
 
+        [SerializeField] private float _tileSpeedIncreaseDelta = 2f;
         [SerializeField] private ItemsCategoryConfig _itemsCategoryConfig;
         [SerializeField] private ItemsViewConfig _itemsViewConfig;
-         
-        [SerializeField] private float _tileSpeedIncreaseDelta = 2f;
         [SerializeField] private List<string> _collectedItems = new();
 
         public void IncreaseTilesSpeed() => 

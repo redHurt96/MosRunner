@@ -30,5 +30,17 @@ namespace _Project.Logic.Editor
                 EditorUtility.SetDirty(car.gameObject);
             }
         }
+
+        [MenuItem("Project/Cars/Move up")]
+        private static void MoveUpCars()
+        {
+            foreach (Transform car in Selection.gameObjects.Select(x => x.transform))
+            {
+                foreach (Transform carChild in car) 
+                    carChild.Translate(Vector3.up * .22f);
+
+                EditorUtility.SetDirty(car.gameObject);
+            }
+        }
     }
 }
