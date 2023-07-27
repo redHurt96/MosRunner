@@ -4812,8 +4812,6 @@ GameObject:
   - component: {fileID: 3532432739657821425}
   - component: {fileID: 3532432739657821424}
   - component: {fileID: 3532432739657821455}
-  - component: {fileID: 8395592702411295975}
-  - component: {fileID: 6665867549368738812}
   m_Layer: 0
   m_Name: FX_PowerUp_TrafficCone_BA
   m_TagString: Untagged
@@ -9629,32 +9627,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!65 &8395592702411295975
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3532432739657821454}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &6665867549368738812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3532432739657821454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57e983e7e4de77347aa726b43efd6b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 4748730675913877244, guid: 9c074aa299cf88f4a9ce34d50a5bbff3, type: 3}
 --- !u!1 &6736045446023129036
 GameObject:
   m_ObjectHideFlags: 0
@@ -14609,6 +14581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _task: 
   _destroyEffect: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
+  _name: {fileID: 2988134463812615888, guid: 12b2759d35d889c43ae14427846e709c, type: 3}
 --- !u!114 &8005223937587298097
 MonoBehaviour:
   m_ObjectHideFlags: 0
