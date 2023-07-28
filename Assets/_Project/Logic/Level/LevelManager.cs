@@ -14,6 +14,9 @@ namespace _Project.Logic.Level
 
         public void EndGame()
         {
+            if (GameEnded)
+                return;
+            
             _data ??= FindObjectOfType<LevelData>();
             _data.TileSpeed = 0f;
 
