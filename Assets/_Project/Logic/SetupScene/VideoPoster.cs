@@ -10,8 +10,11 @@ namespace _Project.Logic.SetupScene
         [SerializeField] private GameObject _next;
         [SerializeField] private VideoPlayer _videoPlayer;
 
-        private void Start() => 
+        private void Start()
+        {
+            _tutorialTip.SetActive(false);
             _videoPlayer.loopPointReached += EnableButton;
+        }
 
         private void OnDestroy() => 
             _videoPlayer.loopPointReached -= EnableButton;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using RH_Utilities.Attributes;
 using UnityEngine;
@@ -16,11 +17,19 @@ namespace _Project.Logic.Level
         [SerializeField] private float _originTime;
         [SerializeField, ReadOnly] private float _time;
         [SerializeField] private GameObject _tutorial;
+        
+        private Coroutine _routine;
 
         private void Start()
         {
             _time = _originTime;
-            StartCoroutine(TimerRoutine());
+            _levelManager.OnEnd += TryBreak;
+            _routine = StartCoroutine(TimerRoutine());
+        }
+
+        private void OnDestroy()
+        {
+            _levelManager.OnEnd -= TryBreak;
         }
 
         private IEnumerator TimerRoutine()
@@ -35,6 +44,14 @@ namespace _Project.Logic.Level
             }
             
             _levelManager.EndGame();
+        }
+
+        private void TryBreak()
+        {
+            if (_routine != null)
+                StopCoroutine(_routine);
+            
+            _tutorial.SetActive(false);
         }
     }
 }
