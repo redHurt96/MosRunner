@@ -22,7 +22,7 @@ namespace _Project.Logic.SetupScene
                 Interact();
         }
 
-        private void Interact()
+        public void Interact()
         {
             _next.SetActive(true);
             gameObject.SetActive(false);
