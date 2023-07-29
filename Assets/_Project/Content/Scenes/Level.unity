@@ -34885,6 +34885,7 @@ GameObject:
   - component: {fileID: 1028161353}
   - component: {fileID: 1028161354}
   - component: {fileID: 1028161355}
+  - component: {fileID: 1028161356}
   m_Layer: 5
   m_Name: End Game Screen
   m_TagString: Untagged
@@ -34964,6 +34965,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tips:
   - {fileID: 957454015}
+--- !u!114 &1028161356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028161350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1385edccc72142a59801d7cfc5cd0c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 60
 --- !u!1001 &1030787492
 PrefabInstance:
   m_ObjectHideFlags: 0
