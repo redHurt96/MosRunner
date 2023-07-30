@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,19 +7,17 @@ namespace _Project.Logic.UI
 {
     public class CollectedItemNameUIView : MonoBehaviour
     {
-        [SerializeField] private Color _in;
-        [SerializeField] private Color _out;
+        public event Action<float> TextAssigned;
         
-        private Text _text;
+        [SerializeField] private CanvasGroup _canvasGroup;
+        [SerializeField] private Text _text;
 
         private void Start()
         {
-            _text ??= GetComponent<Text>();
-
-            _text
-                .DOColor(_in, 1f)
+            _canvasGroup
+                .DOFade(1f, 1f)
                 .OnComplete(() =>
-                    _text.DOColor(_out, .95f));
+                    _canvasGroup.DOFade(0f, .95f));
             
             transform
                 .DOLocalMoveY(350, 2f)
@@ -27,8 +26,8 @@ namespace _Project.Logic.UI
 
         public void Setup(string task)
         {
-            _text ??= GetComponent<Text>();
             _text.text = task;
+            TextAssigned?.Invoke(_text.preferredWidth);
         }
     }
 }

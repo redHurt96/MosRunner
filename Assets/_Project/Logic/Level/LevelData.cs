@@ -26,7 +26,7 @@ namespace _Project.Logic.Level
             _collectedItems.Count(x => _itemsCategoryConfig.Contains(x, category)) 
             / _itemsCategoryConfig.TasksCount(category);
 
-        private bool IsItemCollected(string itemType) => 
+        public bool IsItemCollected(string itemType) => 
             _collectedItems.Contains(itemType);
 
         public ItemViewConfig GetRandomItemViewConfig() => 
